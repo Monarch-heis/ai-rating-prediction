@@ -90,7 +90,8 @@ df.head(5)
 
 if st.button('Predict Rating'):
     pred = model.predict([[studentlevel,discipline,sessionlengthmin,totalprompts,tasktype,ai_assistancelevel,finaloutcome]])
-    st.write('Prediction result (rating):', pred[0])
+    rounded_pred = round(pred[0])
+    st.write('Prediction result (rating):', rounded_pred)
 
 st.subheader("Training Dataset Preview")
 st.write(df.head())
